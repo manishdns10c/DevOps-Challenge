@@ -27,7 +27,11 @@ jobs:
                 uses: actions/checkout@v3 
             -   
                 name: Build docker image
-                run:  sh ./scripts/dockerBuild.sh $env:GITHUB_RUN_NUMBER
+                run:  sh ./scripts/dockerBuild.sh
+                env:
+                            DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+                            DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+                            BUILD_NUMBER: $env:GITHUB_RUN_NUMBER
             
   
                   
