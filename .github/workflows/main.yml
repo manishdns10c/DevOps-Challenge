@@ -26,5 +26,5 @@ jobs:
                 name: checkout source code.
                 uses: actions/checkout@v3 
             -   
-                name: checkout source code.
-                run: docker build . -t python-app
+                name: Build docker image
+                run: sudo docker build . -t python-app
