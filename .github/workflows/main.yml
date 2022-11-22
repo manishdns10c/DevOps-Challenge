@@ -29,3 +29,8 @@ jobs:
             -
                 name: Build docker image
                 run:  sh ./scripts/dockerBuild.sh
+                env:
+                    BUILD_NUMBER: "${{ env.GITHUB_RUN_NUMBER }}"
+            
+  
+                  
