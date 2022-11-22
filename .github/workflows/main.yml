@@ -22,17 +22,11 @@ jobs:
         runs-on: [self-hosted, linux]
         needs: ['Run-tests']       
         steps:
-            -   name: echo no
-                run: echo $GITHUB_RUN_NUMBER
             -   
                 name: checkout source code.
                 uses: actions/checkout@v3 
-            
             -
                 name: Build docker image
                 run:  sh ./scripts/dockerBuild.sh
-                env:
-                    BUILD_NUMBER: $GITHUB_RUN_NUMBER
-            
-  
+
                   

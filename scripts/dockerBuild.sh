@@ -1,6 +1,5 @@
 docker build . -t python-app
 image_id=$(sudo docker images --filter "reference=python-app" --quiet)
-
-
-docker tag $image_id manish3097/python-app:$GITHUB_RUN_NUMBER
+tag=$(date +'%d%m%Y%H%M')
+docker tag $image_id manish3097/python-app:$tag
 docker push manish3097/python-app
