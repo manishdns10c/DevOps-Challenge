@@ -6,7 +6,7 @@ on:
 
 
 jobs:
-    build:
+    Run-tests:
         runs-on: ubuntu-latest
         steps:
             -   name: checkout source code.
@@ -18,4 +18,8 @@ jobs:
             -
                 name: Run Unit tests
                 run: python ./tests/test.py
-
+    docker-build:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: checkout source code.
+                run: docker build . -t python-app
