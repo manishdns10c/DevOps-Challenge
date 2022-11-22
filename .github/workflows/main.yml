@@ -20,7 +20,7 @@ jobs:
                 run: python ./tests/test.py
     docker-build:
         runs-on: [self-hosted, linux]
-        needs: ['build']       
+        needs: ['Run-tests']       
         steps:
             -   
                 name: checkout source code.
