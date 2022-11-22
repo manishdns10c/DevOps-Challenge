@@ -23,7 +23,7 @@ jobs:
         needs: ['Run-tests']       
         steps:
             -   name: echo no
-                run: echo ${{ env.GITHUB_RUN_NUMBER }}
+                run: echo $env:GITHUB_RUN_NUMBER 
             -   
                 name: checkout source code.
                 uses: actions/checkout@v3 
