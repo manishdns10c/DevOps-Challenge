@@ -9,7 +9,7 @@ jobs:
     Run-tests:
         runs-on: ubuntu-latest
         steps:
-            -   name: checkout source code.
+            -   name: checkout source code
                 uses: actions/checkout@v3
             -
                 name: Install python dependencies
@@ -28,5 +28,12 @@ jobs:
             -
                 name: Build docker image
                 run:  sh ./scripts/dockerBuild.sh
+    Deployment:
+        runs-on: [self-hosted, linux]
+        needs: ['Run-tests','docker-build']     
+        steps:  
+            -
+                name: deploy image
+                run:  sh ./scripts/deploy.sh
 
                   
