@@ -11,7 +11,7 @@ try:
         host=os.getenv("REDIS_HOST"),
         port=int(os.getenv("REDIS_PORT")),
         db=int(os.getenv("REDIS_DB")),
-        password=base64.base64decode(os.getenv("REDIS_PASSWORD"))
+        password=os.getenv("REDIS_PASSWORD")
     )
     r.set("counter", 0)
 except ConnectionError:
