@@ -15,6 +15,12 @@ spec:
       containers:
       - name: app
         image: manish3097/python-app
+        env:
+            - name: REDIS_PASSWORD
+              valueFrom:
+                     secretKeyRef:
+                          name: redis
+                          key: REDIS_PASSWORD
         resources:
           requests:
                 memory: "64Mi"
