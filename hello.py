@@ -5,7 +5,7 @@ import tornado.web
 
 import os
 from sys import exit
-
+print("redsi passwird="+os.getenv("REDIS_PASSWORD"))
 try:
     r = redis.Redis(
         host=os.getenv("REDIS_HOST"),
